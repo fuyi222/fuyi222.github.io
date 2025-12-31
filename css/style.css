@@ -1,0 +1,211 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:  border-box;
+    font-family: "Microsoft YaHei", sans-serif;
+
+}
+
+body {
+    background-color: antiquewhite;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+header{
+    padding: 20px 40px;
+    border-bottom: 2px solid #4e79a7;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+header h1{
+    color: #4e79a7;
+    font-size: 2.2rem;
+
+}
+
+nav a{
+    color: #333;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+nav a:hover{
+    color: #4e79a7;
+    border-bottom: 2px solid #4e79a7;
+
+}
+
+main{
+    padding: 0 40px;
+}
+
+section h2{
+    color: #2c3e50;
+    font-size: 1.8rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+
+}
+
+/* 年度大事记：事件列表容器 */
+.event-list {
+    /* 上下留白 */
+    margin: 0 0 50px 0;
+    /* 事件项之间的间距 */
+    gap: 30px;
+    /* 弹性布局：自动换行，适配不同屏幕 */
+    display: flex;
+    flex-direction: column;
+}
+
+/* 单个事件项样式（文字+图片） */
+.event-item {
+    /* 白色背景卡片，突出事件 */
+    background-color: #fff;
+    /* 圆角边框，更美观 */
+    border-radius: 8px;
+    /* 内边距：内容和卡片边框的间距 */
+    padding: 25px;
+    /* 阴影效果：让卡片有立体感 */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    /* 鼠标悬浮时，阴影加深，提升交互 */
+    transition: box-shadow 0.3s ease;
+}
+
+/* 事件卡片悬浮效果 */
+.event-item:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* 事件标题（2025.09 踏入南大...） */
+.event-item h3 {
+    /* 标题颜色 */
+    color: #4e79a7;
+    /* 底部留白，分隔标题和描述 */
+    margin-bottom: 12px;
+    /* 字体大小 */
+    font-size: 1.3rem;
+}
+
+/* 事件描述文字 */
+.event-item p {
+    /* 行高：提升文字可读性（行高1.6倍，不会太挤） */
+    line-height: 1.6;
+    /* 底部留白，分隔文字和图片 */
+    margin-bottom: 20px;
+    /* 字体大小 */
+    font-size: 1rem;
+    /* 文字对齐：左对齐，更整洁 */
+    text-align: left;
+}
+
+/* 大事记图片样式：控制大小，避免图片过大/过小 */
+.event-item img {
+    /* 图片最大宽度：不超过卡片宽度，避免溢出 */
+    max-width: 100%;
+    /* 图片高度：自动适应，保持比例不变形 */
+    height: auto;
+    /* 图片最大高度：限制图片高度，避免过长 */
+    max-height: 500px;
+    /* 图片居中显示 */
+    display: block;
+    margin: 0 auto;
+    /* 圆角边框，和卡片风格统一 */
+    border-radius: 6px;
+}
+
+/* 年度感想模块 */
+#feeling {
+    /* 上下留白，分隔模块 */
+    margin-bottom: 50px;
+    /* 白色背景，和大事记卡片风格一致 */
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* 感想文字样式 */
+#feeling p {
+    /* 行高：提升可读性 */
+    line-height: 1.8;
+    /* 段落之间的间距 */
+    margin-bottom: 18px;
+    /* 字体大小 */
+    font-size: 1.05rem;
+    /* 首行缩进2字符，更符合中文阅读习惯 */
+    text-indent: 2em;
+}
+
+/* 新年目标模块 */
+#goal {
+    margin-bottom: 50px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* 目标列表样式 */
+.goal-list {
+    /* 去除列表默认的圆点和左侧缩进，自定义样式 */
+    list-style: none;
+    /* 左侧内边距，让列表更整齐 */
+    padding-left: 20px;
+}
+
+/* 单个目标项样式 */
+.goal-list li {
+    /* 行高：提升可读性 */
+    line-height: 1.8;
+    /* 列表项之间的间距 */
+    margin-bottom: 15px;
+    /* 字体大小 */
+    font-size: 1.05rem;
+    /* 自定义列表项前面的符号（方形，和整体风格统一） */
+    position: relative;
+}
+
+/* 自定义目标列表的前置符号 */
+.goal-list li::before {
+    content: "";
+    /* 方形样式 */
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #4e79a7;
+    /* 符号和文字的间距 */
+    margin-right: 10px;
+    /* 垂直居中对齐 */
+    position: absolute;
+    left: -20px;
+    top: 8px;
+}
+
+/* 底部样式 */
+footer {
+    /* 顶部边框，分隔主体和底部 */
+    border-top: 2px solid #4e79a7;
+    /* 内边距 */
+    padding: 20px 40px;
+    /* 文字居中 */
+    text-align: center;
+    /* 字体大小 */
+    font-size: 0.95rem;
+    /* 文字颜色：浅灰色 */
+    color: #666;
+    /* 顶部留白 */
+    margin-top: 40px;
+}
