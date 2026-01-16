@@ -1,0 +1,269 @@
+/* 全局样式：统一页面默认样式，消除浏览器差异 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+/* 页面主体样式：护眼背景+居中布局+留白 */
+body {
+    background-color: #ffdfab;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* 头部区域：标题+导航布局 */
+header {
+    padding: 20px 40px;
+    border-bottom: 2px solid #4e79a7;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* 主标题样式 */
+header h1 {
+    color: #4e79a7;
+    font-size: 2.2rem;
+}
+
+/* 导航栏样式 */
+nav a {
+    color: #4e79a7;;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* 导航悬浮交互效果 */
+nav a:hover {
+    color: #4e79a7;
+    border-bottom: 2px solid #4e79a7;
+}
+
+/* 主体内容统一留白 */
+main {
+    padding: 0 40px;
+}
+
+/* 所有板块标题通用样式（俯仰之间/去日光景/云程发轫） */
+section h2 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    border-bottom: 1px solid #79bad6;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+/* 第一部分：俯仰之间（概述引言，无图片） */
+#overview {
+    margin-bottom: 50px;
+    background-color: #fefbdb;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* 俯仰之间文字样式 */
+#overview p {
+    line-height: 1.8;
+    margin-bottom: 18px;
+    font-size: 1.3rem;
+    border-radius: 8px;
+    text-indent: 2em; /* 首行缩进2字符，符合中文阅读习惯 */
+}
+
+
+
+/* 第二部分：去日光景（事件列表，带图片） */
+#event {
+    margin-bottom: 50px;
+    background-color: #fefbdb;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* 事件列表容器 */
+.event-list {
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 单个事件卡片样式 */
+.event-item {
+    background-color: #fcfaec;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease; /* 悬浮过渡动画，更丝滑 */
+}
+
+/* 事件卡片悬浮效果：阴影加深，增强立体感 */
+.event-item:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* 事件标题样式 */
+.event-item h3 {
+    color: #4e79a7;
+    margin-bottom: 25px;    /*调节行间距*/
+    font-size: 1.5rem;
+}
+
+/* 事件描述文字样式 */
+.event-item p {
+    line-height: 1.6;
+    margin-bottom: 15px;    /*用于调节行间距*/
+    margin-top: 15px;
+    font-size: 1.3rem;
+    text-align: left;   /*用于调节向左对齐还是向右对齐*/
+    text-indent: 2em;
+}
+
+/* 事件图片样式：居中+自适应+圆角 */
+.event-item img {
+    max-width: 100%;
+    height: auto;
+    max-height: 800px;
+    display: block;
+    margin: 0 auto; /*用于调节图片左右偏移*/
+    border-radius: 6px; /*用于调节圆角半径*/
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.event-item .annotation {
+    line-height: 1.3;
+    margin-bottom: 15px;    /*用于调节行间距*/
+    margin-top: 15px;
+    font-size: 1.3rem;
+    text-align: center;  
+    color: #8b8b8b;
+}
+
+.event-item .italic {
+    line-height: 1.3;
+    margin-bottom: 15px;    /*用于调节行间距*/
+    margin-top: 15px;
+    font-size: 1.3rem;
+     
+    color: #8b8b8b;
+    font-style: italic;    
+}
+
+.event-item .bottom-annotation {
+    border-top: 1px solid #6b4f4f ;
+    border-left: 10px solid #6b4f4f ;
+    padding-top: 4px;
+    padding-left: 6px;
+    line-height: 1.3;
+    margin-bottom: 10px;    /*用于调节行间距*/
+    margin-top: 15px;
+    font-size: 1.1rem;
+    text-align: left ; 
+    color: #adadad;
+}
+
+.event-item .anno-icon {/*【注】*/
+    line-height: 1.3;
+
+    font-size: 0.8rem;
+    text-align: center;  
+    color: #8b8b8b;
+}
+
+.event-img-group-with-annotation {
+    /* 核心属性：开启弹性布局，子元素（图片）横向排列 */
+    display: flex;
+    /* 图片之间添加间距，避免紧贴在一起（可自定义数值，比如15px、20px） */
+    gap: 20px;
+    /* 让图片组在事件卡片中居中显示 */
+    justify-content: center;
+    /* 适配小屏幕（手机端）：屏幕过小时，图片自动换行，不挤在一起 */
+    flex-wrap: wrap;
+    /* 图片组和上方文字的间距（和单个图片的间距保持一致，视觉统一） */
+    margin-top: 0;
+}
+
+/* 调整图片组内的图片样式：平分宽度，不溢出 */
+.event-img-group-with-annotation img {
+    /* 核心属性：让两张图片平分父容器宽度（自动适应，不会一宽一窄） */
+    flex: 1;
+    /* 限制图片最大宽度：避免图片过宽，超出卡片范围 */
+    max-width: calc(50% - 10px); /* 50%宽度 - 一半的gap间距，完美适配 */
+    /* 保持原有图片样式（圆角、自适应高度等，无需重复写） */
+    max-height: 700px; /* 可自定义图片高度，和单个图片保持一致即可 */
+    height: auto;
+    border-radius: 6px;
+}
+
+.event-img-group-with-annotation p {
+    line-height: 1.3;
+    margin-bottom: 30px;    /*用于调节行间距*/
+    margin-top: 10px;
+    font-size: 1.3rem;
+    color: #8b8b8b;
+    text-align: center; 
+    text-indent: 0;
+}
+
+/* 第三部分：云程发轫（新年展望，无图片） */
+#future-goals {
+    margin-bottom: 50px;
+    background-color: #fefbdb;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+#future-goals p {
+    line-height: 1.8;
+    margin-bottom: 18px;
+    font-size: 1.3rem;
+    border-radius: 8px;
+    text-indent: 2em; /* 首行缩进2字符，符合中文阅读习惯 */
+}
+/* 展望列表样式（去除默认圆点，自定义样式） */
+/* .goal-list {
+    list-style: none;
+    padding-left: 20px;
+} */
+
+/* 单个展望项样式 */
+/* .goal-list li {
+    line-height: 1.8;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    position: relative;
+} */
+
+/* 自定义展望列表前置符号（和主题色统一） */
+/* .goal-list li::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #4e79a7;
+    margin-right: 10px;
+    position: absolute;
+    left: -20px;
+    top: 8px;
+} */
+
+
+/* 底部区域样式 */
+footer {
+    border-top: 2px solid #4e79a7;
+    padding: 20px 40px;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #666;
+    margin-top: 40px;
+}
